@@ -4,8 +4,13 @@ date = new Date();
 day = date.getDate();
 month = date.getMonth() + 1;
 key = "3984ba96abb7dc803a786ec79db08642";
+weather = document.getElementById("city-weather");
+weather.style.display = 'none';
 
+check = 0;
 search.addEventListener("click", () => {
+    weather.style.display = 'block';
+    check = check + 1;
 
     fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + city.value + "&appid=" + key)
         .then(function (response) {
@@ -153,11 +158,19 @@ search.addEventListener("click", () => {
                             day5Div.appendChild(day5Wind)
                             day5Div.appendChild(day5Hum);
                             daysList.appendChild(day5Div)
+
+                            //If search button is clicked again page reloads
+                            search.addEventListener("click", () => {
+                                if (check = 1) {
+                                    location.reload()
+                                }
+                            })
                         })
                 })
         })
 })
 
+//If user touches inbox again after search page reloads
 city.addEventListener("click", () => {
     if (city.value) {
         location.reload()
