@@ -37,16 +37,16 @@ search.addEventListener("click", () => {
                     cityWeather.appendChild(currentDesc)
 
                     currentTemp = document.createElement("h1");
-                    currentTemp.textContent = "temp: " + ((data.main.temp - 273.15) * 9 / 5 + 32).toFixed(1);
+                    currentTemp.textContent = "Temp: " + ((data.main.temp - 273.15) * 9 / 5 + 32).toFixed(1);
                     cityWeather.appendChild(currentTemp);
 
-                    currentHum = document.createElement("h1");
-                    currentHum.textContent = "humidity: " + data.main.humidity;
-                    cityWeather.appendChild(currentHum)
-
                     currentWind = document.createElement("h1");
-                    currentWind.textContent = "wind speed: " + data.wind.speed;
+                    currentWind.textContent = "Wind: " + data.wind.speed + " MPH";
                     cityWeather.appendChild(currentWind);
+
+                    currentHum = document.createElement("h1");
+                    currentHum.textContent = "Humidity: " + data.main.humidity + "%";
+                    cityWeather.appendChild(currentHum)
 
                     //Fetch future forecast
                     fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + key)
@@ -85,7 +85,7 @@ search.addEventListener("click", () => {
                             day2Date = document.createElement("h1");
                             day2Date.textContent = "(" + month + "/" + (day + 2) + ")";
                             day2Temp = document.createElement("h1");
-                            day2Temp.textContent = ((data.list[8].main.temp - 273.15) * 9 / 5 + 32).toFixed(1);
+                            day2Temp.textContent = "Temp: " + ((data.list[8].main.temp - 273.15) * 9 / 5 + 32).toFixed(1);
                             day2Wind = document.createElement("h1");
                             day2Wind.textContent = "Wind: " + data.list[8].wind.speed + " MPH";
                             day2Desc = document.createElement("h1");
@@ -105,7 +105,7 @@ search.addEventListener("click", () => {
                             day3Date = document.createElement("h1");
                             day3Date.textContent = "(" + month + "/" + (day + 3) + ")";
                             day3Temp = document.createElement("h1");
-                            day3Temp.textContent = ((data.list[16].main.temp - 273.15) * 9 / 5 + 32).toFixed(1);
+                            day3Temp.textContent = "Temp: " + ((data.list[16].main.temp - 273.15) * 9 / 5 + 32).toFixed(1);
                             day3Wind = document.createElement("h1");
                             day3Wind.textContent = "Wind: " + data.list[16].wind.speed + " MPH";
                             day3Desc = document.createElement("h1");
@@ -125,7 +125,7 @@ search.addEventListener("click", () => {
                             day4Date = document.createElement("h1");
                             day4Date.textContent = "(" + month + "/" + (day + 4) + ")";
                             day4Temp = document.createElement("h1");
-                            day4Temp.textContent = ((data.list[24].main.temp - 273.15) * 9 / 5 + 32).toFixed(1);
+                            day4Temp.textContent = "Temp: " + ((data.list[24].main.temp - 273.15) * 9 / 5 + 32).toFixed(1);
                             day4Wind = document.createElement("h1");
                             day4Wind.textContent = "Wind: " + data.list[24].wind.speed + " MPH";
                             day4Desc = document.createElement("h1");
@@ -145,7 +145,7 @@ search.addEventListener("click", () => {
                             day5Date = document.createElement("h1");
                             day5Date.textContent = "(" + month + "/" + (day + 5) + ")";
                             day5Temp = document.createElement("h1");
-                            day5Temp.textContent = ((data.list[32].main.temp - 273.15) * 9 / 5 + 32).toFixed(1);
+                            day5Temp.textContent = "Temp: " + ((data.list[32].main.temp - 273.15) * 9 / 5 + 32).toFixed(1);
                             day5Wind = document.createElement("h1");
                             day5Wind.textContent = "Wind: " + data.list[32].wind.speed + " MPH";
                             day5Desc = document.createElement("h1");
